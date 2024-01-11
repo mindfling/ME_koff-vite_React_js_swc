@@ -1,5 +1,5 @@
 .header {
-  // background-color: lawngreen;
+  border: 3px solid green;
 }
 
 /* container_header */
@@ -19,6 +19,7 @@
 
   .logo {
     grid-area: logo;
+    border: 1px solid violet;
   }
 
   .search {
