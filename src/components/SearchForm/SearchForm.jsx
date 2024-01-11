@@ -1,5 +1,3 @@
-export const Logo = () => (
-  <div>
-    logo
-  </div>
+export const SearchForm = () => (
+  <div>Форма поиска</div>
 )

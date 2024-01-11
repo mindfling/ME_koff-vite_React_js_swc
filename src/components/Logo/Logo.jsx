@@ -1,5 +1,3 @@
 export const Logo = () => (
-  <div>
-    logo
-  </div>
+  <div>logo</div>
 )
