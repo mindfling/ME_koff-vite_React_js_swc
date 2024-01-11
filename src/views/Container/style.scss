@@ -1,0 +1,27 @@
+.container {
+  border: 1px solid black;
+  max-width: 1440px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+
+  @media (min-width: 580px) {
+    border: 1px solid blue;
+    padding: 0 29px;
+  }
+  
+  @media (min-width: 820px) {
+    border: 1px solid orangered;
+    padding: 0 43px;
+  }
+
+  @media (min-width: 1120px) {
+    border: 1px solid lawngreen;
+    padding: 0 92px;
+  }
+
+
+  @media (min-width: calc(1440px + 92px + 92px)) {
+    border: 1px solid darkorchid;
+  }
+}
