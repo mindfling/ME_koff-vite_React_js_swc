@@ -1,0 +1,38 @@
+.footer {
+  color: #F1E9E4;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2; /* 14.4px */}
+
+
+.contacts {
+  display: flex;
+  color: #780096;
+
+  &__tel {
+    color: #000;
+  }
+}
+
+
+.social {
+  display: flex;
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  &__item {
+    display: flex;
+    color: #fff;
+    &:hover {
+      color: #780096;
+    }
+  }
+  &__link {
+    display: flex;
+  }
+}
