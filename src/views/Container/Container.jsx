@@ -2,12 +2,12 @@
 // import './style.scss';
 import s from './Container.module.scss';
 
-export const Container = (props) => props.className ? (
-  <div className={`${s.container} ${props.className}`}>
-    {props.children}
+export const Container = ({ className, children }) => className ? (
+  <div className={`${s.container} ${className}`}>
+    {children}
   </div>
 ) : (
     <div className={s.container}>
-      {props.children}
+      {children}
     </div>
 );
