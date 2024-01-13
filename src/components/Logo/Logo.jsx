@@ -1,3 +1,8 @@
+import logosvg from './logo-koff.svg';
+import s from './Logo.module.scss';
+
 export const Logo = () => (
-  <div>logo</div>
+  <div className={s.logo}>
+    <img src={logosvg} alt="logo lgoo" className="logo" />
+  </div>
 )
