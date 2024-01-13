@@ -8,7 +8,6 @@ import style from './Header.module.scss';
 export const Header = () => (
   <header className={style.header}>
     <Container className={style.container}>
-      <h2>хедер контейнер</h2>
       <div className={style.logo}>
         <Logo />
       </div>
