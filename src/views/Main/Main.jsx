@@ -1,8 +1,8 @@
 // * main
 
-export const Main = () => (
+export const Main = ({ children }) => (
   <main>
-    main
+    {children}
   </main>
 )
 
