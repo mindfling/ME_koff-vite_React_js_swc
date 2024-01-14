@@ -1,21 +1,20 @@
 .navigation {
-  grid-area: control;
-  justify-self: end;
   display: flex;
   gap: 16px;
-
-  border: 1px solid violet;
+  // border: 1px solid violet;
 }
 
 
 .link {
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
   gap: 4px;
+  flex-direction: row-reverse;
+  outline: none;
 
   svg {
-    fill: #fff;
+    // fill: #fff;
+    fill: transparent;
   }
 
   &:hover,
@@ -29,7 +28,6 @@
 
   &:focus-visible {
     color: #780096;
-    outline-color: #780096;
   }
 
   @media (min-width: 580px) {
@@ -39,9 +37,14 @@
 
 
 .linkText {
-  display: none;
+  display: block;
+  // display: none;
+  position: fixed;
+  transform: scale(0);
 
   @media (min-width: 580px) {
-    display: block;
+    // display: block;
+    position: unset;
+    transform: scale(1);
   }
 }
