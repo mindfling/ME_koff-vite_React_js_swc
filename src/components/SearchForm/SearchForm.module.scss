@@ -13,9 +13,11 @@
   background-color: #eeeff2;
   border: 1px solid transparent;
   outline: none;
+  font-size: 12px;
 
   &::placeholder {
     color: #969EAE;
+    font-size: 12px;
   }
 
   &:focus-visible,
@@ -34,7 +36,7 @@
   height: 16px;
   border-radius: 4px;
   outline-offset: 4px;
-  outline: 1px solid transparent;
+  outline: 2px solid transparent;
 
   &:hover,
   &:active {
