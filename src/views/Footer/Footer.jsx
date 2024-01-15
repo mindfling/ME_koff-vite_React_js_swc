@@ -7,7 +7,7 @@ import s from './Footer.module.scss';
 export const Footer = () => (
   <footer className={s.footer}>
     <Container className={s.container}>
-      <a className="logo_link" href="/">
+      <a className={s.logo_link} href="/">
         <img className={s.logo} src={logoFooter} alt="big logo footer" />
       </a>
 
@@ -69,15 +69,29 @@ export const Footer = () => (
 
       </div>
 
-      <div className="development">
+
+      <ul className={s.developer_list}>
+        <li className={s.developer_item}>Designer: <a className="footer__developer-link" target="_blank" rel="noreferrer" href="https://t.me/Mrshmallowww" title='@Mrshmallowww'>
+          Anastasia Ilina
+          </a>
+        </li>
+        <li className={s.developer_item}>Developer: <a className="footer__developer-link" target="_blank" rel="noreferrer" href="https://t.me/quper24" title='@Quper24'>
+          Maksim&nbsp;Leskin
+          </a>
+        </li>
+      </ul>
+
+      <p className={s.copyright}>&copy;&nbsp;Koff,&nbsp;{'2023-2024'}</p>
+
+
+      {/* <div className="development">
         <p className="development__designer">
           Designer: <span>@Anastasia Ilina</span>
         </p>
         <p className="development__webdeveloper">
           Developer: <span>@mindfling</span>
         </p>
-      </div>
-      <div className="copyright">&copy; Koff, 2024</div>
+      </div> */}
 
 
     </Container>
