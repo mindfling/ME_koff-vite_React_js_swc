@@ -1,26 +1,63 @@
 .footer {
-  color: #F1E9E4;
-  font-family: "Open Sans", sans-serif;
+  background-color: #1c1c1c;
+  color: #f1e9e4;
+  padding: 32px 0 40px;
+  font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.2; /* 14.4px */}
+  line-height: 1.2; /* 14.4px */
+}
 
-
-.contacts {
+.container {
   display: flex;
-  color: #780096;
-
-  &__tel {
-    color: #000;
+  flex-direction: column;
+  gap: 24px;
+}
+// @media (min-width: 580px) {
+// }
+@media (width > 580px) {
+  .container {
+    border: 1px solid lawngreen;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width > 820px) {
+  .container {
+    border: 1px solid orange;
+    gap: 32px;
   }
 }
 
 
-.social {
-  display: flex;
+.logo {
+  display: block;
+  width: 230px;
+}
 
-  &__list {
+
+.contacts {
+  // border: 1px solid lawngreen;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-self: end;
+  color: #f1e9e4;
+  
+  &Phone {
+    display: flex;
+    gap: 4px;
+    &:hover {
+      color: #DFE3EB;
+    }
+  }
+  &__tel {
+    color: #f1e9e4;
+  }
+  
+
+    &__list {
     display: flex;
     align-items: flex-start;
     gap: 8px;
