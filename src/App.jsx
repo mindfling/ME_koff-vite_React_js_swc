@@ -8,19 +8,23 @@ const App = () => (
     <Header />
 
     <Main>
-      <Container>
-        <h1>Заголовок веб приложения</h1>
-      </Container>
-      <Container>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde suscipit eligendi beatae consectetur dolorem,
-          quae at nemo quis sequi velit in? Assumenda debitis ratione placeat cumque asperiores?
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos possimus facere repudiandae qui eaque amet ut
-          harum consectetur vitae eius impedit tempora earum nobis aspernatur, reiciendis adipisci
-        </p>
-      </Container>
+      <h1>Список веб товаров</h1>
+      <div className="catalogue"></div>
+      <div className="goods">
+        <ul className="goods__list">
+          <li className="goods__item">
+            
+          </li>
+        </ul>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde suscipit eligendi beatae consectetur dolorem, quae
+        at nemo quis sequi velit in? Assumenda debitis ratione placeat cumque asperiores?
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos possimus facere repudiandae qui eaque amet ut
+        harum consectetur vitae eius impedit tempora earum nobis aspernatur, reiciendis adipisci
+      </p>
     </Main>
 
     <Footer />
