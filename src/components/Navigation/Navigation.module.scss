@@ -1,6 +1,7 @@
 .navigation {
   display: flex;
   gap: 16px;
+  color: var(--dark-text, #1c1c1c);
   // border: 1px solid violet;
 }
 
@@ -41,6 +42,7 @@
   // display: none;
   position: fixed;
   transform: scale(0);
+  color: inherit;
 
   @media (min-width: 580px) {
     // display: block;

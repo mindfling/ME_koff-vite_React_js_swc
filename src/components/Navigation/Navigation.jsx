@@ -11,7 +11,7 @@ export const Navigation = () => (
     </a>
     <a className={s.link} href="/cart" title='Перейти в Корзину'>
       <span className={s.linkText}>Корзина</span>
-      <span className={s.count}>({numberGoods})</span>
+      <span className={s.linkText}>({numberGoods})</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M5.87336 1.33325L3.46002 3.75325" stroke="currentColor" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
         <path d="M10.1266 1.33325L12.54 3.75325" stroke="currentColor" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
