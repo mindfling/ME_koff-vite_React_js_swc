@@ -4,7 +4,10 @@ import { Container } from '../Container/Container';
 import logoFooter from './logo-koff-footer.svg';
 import s from './Footer.module.scss';
 
-export const Footer = () => (
+export const Footer = () => {
+  const currentYear = 2024;
+    
+  return (
   <footer className={s.footer}>
     <Container className={s.container}>
       <a className={s.logo_link} href="/">
@@ -75,25 +78,14 @@ export const Footer = () => (
           Anastasia Ilina
           </a>
         </li>
-        <li className={s.developer_item}>Developer: <a className="footer__developer-link" target="_blank" rel="noreferrer" href="https://t.me/quper24" title='@Quper24'>
-          Maksim&nbsp;Leskin
+        <li className={s.developer_item}>Developer: <a className="footer__developer-link" target="_blank" rel="noreferrer" href="https://t.me/quper24" title='@Mindfling'>
+          Dim MindFling
           </a>
         </li>
       </ul>
 
-      <p className={s.copyright}>&copy;&nbsp;Koff,&nbsp;{'2023-2024'}</p>
-
-
-      {/* <div className="development">
-        <p className="development__designer">
-          Designer: <span>@Anastasia Ilina</span>
-        </p>
-        <p className="development__webdeveloper">
-          Developer: <span>@mindfling</span>
-        </p>
-      </div> */}
-
+      <p className={s.copyright}>&copy;&nbsp;Koff,&nbsp;{`2023-${currentYear}`}</p>
 
     </Container>
   </footer>
-);
+)};
