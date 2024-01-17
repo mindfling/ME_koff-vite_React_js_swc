@@ -6,6 +6,7 @@ import './index.css';
 
 const rootSelector = '#root';
 const rootElement = document.querySelector(rootSelector);
+rootElement.classList.add('root');
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(

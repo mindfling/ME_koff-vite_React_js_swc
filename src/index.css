@@ -31,8 +31,14 @@
 :root {
   -dark-text: #1C1C1C;
   -light-text: #F1E9E4;
-  -dark-bg: #000;
+  -black-bg: #000;
+  -dark-bg: #1C1C1C;
   -light-bg: #FFF;
+  -violet: #780096;
+  -dark: #1C1C1C;
+  -gray: #969EAE;
+  -white: #ffffff;
+  -light-form: #EEEFF2;
 }
 
 
@@ -53,15 +59,18 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
-  color: var(-dark-text);
   font-family: Open Sans;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
-  background-color: #fff;
+  color: var(-dark-text);
+  background-color: var(-light-bg, #fff);
   background-color: lightgrey; /* DEBUG */
 }
 
+
+/* for footer* */
+.root,
 #root {
   display: flex;
   flex-direction: column;
@@ -114,6 +123,7 @@ fieldset {
   position: fixed;
   transform: scale(0);
 }
+
 
 /* text selection */
 ::selection {
