@@ -8,23 +8,41 @@ const App = () => (
     <Header />
 
     <Main>
-      <h1>Список веб товаров</h1>
-      <div className="catalogue"></div>
-      <div className="goods">
-        <ul className="goods__list">
-          <li className="goods__item">
-            
-          </li>
-        </ul>
-      </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde suscipit eligendi beatae consectetur dolorem, quae
-        at nemo quis sequi velit in? Assumenda debitis ratione placeat cumque asperiores?
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos possimus facere repudiandae qui eaque amet ut
-        harum consectetur vitae eius impedit tempora earum nobis aspernatur, reiciendis adipisci
-      </p>
+
+      <Container>
+        <h1>Список веб товаров</h1>
+        <div className="catalogue">
+          <ul className="catalogue__list">
+            <li className="catalogue__item">
+              <a href="#" className="catalogue__link">Тумбы</a>
+            </li>
+            <li className="catalogue__item">
+              <a href="#" className="catalogue__link">Столы</a>
+            </li>
+          </ul>
+        </div>
+        <p className='visuall-hidden'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ex expedita officiis et, esse quidem, consectetur, quas aut soluta commodi sed! Molestias quam, corporis impedit magni dolorem consequuntur explicabo quae.</p>
+      </Container>
+
+      <Container>
+        <div className="goods">
+          <ul className="goods__list">
+
+            <li className="goods__item">
+              <article className='card'>
+                <img src="" alt="" className="card__image" />
+                <div className="card__info">
+                  <span className='card__description'></span>
+                  <span className="card__price"></span>
+                </div>
+                <button className="card__btn"></button>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+      </Container>
+
     </Main>
 
     <Footer />
