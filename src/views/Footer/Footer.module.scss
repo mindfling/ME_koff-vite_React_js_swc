@@ -20,7 +20,11 @@
 
   @media (width > 580px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // 1fr 1fr 
+    // grid-template-columns: repeat(2, 1fr); // 1fr 1fr 
+    grid-template-areas:
+      "logo contacts"
+      "development ."
+      "copyright .";
   }
 
   @media (width > 820px) {
@@ -33,9 +37,6 @@
   display: block;
   width: 230px;
 
-  @media (width > 580px) {
-    grid-column: 1/2;
-  }
 
   @media (width > 820px) {
     width: 331px;
@@ -43,6 +44,11 @@
 
   &_link {
     display: block;
+
+    @media (width > 580px) {
+      // grid-column: 1/2;
+      grid-area: logo;
+    }
 
   }
 }
@@ -54,15 +60,18 @@
   flex-direction: column;
   gap: 20px;
   color: #f1e9e4;
-  
+
   @media (width > 580px) {
     justify-self: end;
-    grid-column: 2/3;
+    // grid-column: 2/3;
+    grid-area: contacts;
   }
+
 
   &Phone {
     display: flex;
     gap: 4px;
+
     &:hover {
       color: #DFE3EB;
     }
@@ -82,6 +91,7 @@
   &__item {
     display: flex;
     color: #fff;
+
     &:hover {
       color: #780096;
     }
@@ -98,6 +108,13 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+
+    @media (width > 580px) {
+      // grid-column: 1/2;
+      justify-self: start;
+      grid-area: development;
+    }
   }
 }
 
@@ -106,7 +123,8 @@
   display: block;
 
   @media (width > 580px) {
-    grid-column: 1/2;
+    // grid-column: 1/2;
     justify-self: start;
+    grid-area: copyright;
   }
 }
