@@ -1,6 +1,6 @@
 @import '../node_modules/modern-normalize/modern-normalize.css';
-// @import 'styles/fonts.scss';
-// @import 'styles/variables.scss';
+@import 'styles/fonts';
+@import 'styles/variables';
 
 :root {
   --dark-text: #1C1C1C;
@@ -12,7 +12,7 @@
   --dark: #1C1C1C;
   --gray: #969EAE;
   --white: #ffffff;
-  --light-form: #EEEFF2;
+  --form-bg: #EEEFF2;
 }
 
 
@@ -36,8 +36,8 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
-  color: var(--dark-text);
-  background-color: var(--light-bg, #fff);
+  color: var(--dark-text, $dark-text);
+  background-color: var(--light-bg, $light-bg);
 }
 
 
@@ -99,6 +99,14 @@ fieldset {
 
 /* text selection */
 ::selection {
-  background-color: #86319b;
-  color: #ffffff;
+  background-color: $select-bg;
+  color: $select-text;
+}
+
+header {
+  background-color: $form;
+}
+
+footer {
+  background-color: $black;
 }
