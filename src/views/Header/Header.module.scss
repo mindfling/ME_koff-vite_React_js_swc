@@ -1,8 +1,10 @@
+@import '../../styles/_variables.scss';
+
 .header {
   padding-top: 16px;
   padding-bottom: 16px;
-  background-color: #fff;
-  border-bottom: 1px solid #eeeff2;
+  background-color: $light-bg;
+  border-bottom: 1px solid $form;
   /** */
   // flex-grow: 1; /* for footer */
 }
@@ -22,7 +24,6 @@
     grid-template-columns: 94px 1fr auto;
   }
 }
-
 
 .logo {
   grid-area: logo;

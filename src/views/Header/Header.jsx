@@ -8,15 +8,9 @@ import style from './Header.module.scss';
 export const Header = () => (
   <header className={style.header}>
     <Container className={style.container}>
-      <div className={style.logo}>
-        <Logo />
-      </div>
-      <div className={style.search}>
-        <SearchForm />
-      </div>
-      <div className={style.navigation}>
-        <Navigation />
-      </div>
+      <Logo className={style.logo} />
+      <SearchForm className={style.search} />
+      <Navigation className={style.navigation} />
     </Container>
   </header>
 )

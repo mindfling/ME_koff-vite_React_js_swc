@@ -1,3 +1,5 @@
+@import '../../styles/_variables.scss';
+
 .form {
   // grid-area: search;
   position: relative;
@@ -10,13 +12,13 @@
   height: 100%;
   padding: 0 11px 0 24px;
   border-radius: 32px;
-  background-color: #eeeff2;
+  background-color: $form;
   border: 1px solid transparent;
   outline: none;
   font-size: 12px;
 
   &::placeholder {
-    color: #969EAE;
+    color: $gray;
     font-size: 12px;
   }
 
@@ -40,11 +42,11 @@
 
   &:hover,
   &:active {
-    color: #780096;
+    color: $violet;
   }
 
   &:focus {
-    color: #780096;
-    outline-color: #780096;
+    color: $violet;
+    outline-color: $violet;
   }
 }

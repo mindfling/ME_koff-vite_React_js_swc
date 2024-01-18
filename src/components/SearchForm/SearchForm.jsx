@@ -1,7 +1,7 @@
 import s from './SearchForm.module.scss';
 
-export const SearchForm = () => (
-  <form className={s.form} method="get">
+export const SearchForm = (props) => (
+  <form className={props.className ? `${props.className} ${s.form}` : s.form} >
     <input className={s.input} type="search" name="search" placeholder="Введите запрос" />
     <button className={s.button} type="submit" title='Найти товар'>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -12,4 +12,4 @@ export const SearchForm = () => (
       </svg>
     </button>
   </form>
-);
+)
