@@ -1,7 +1,7 @@
 // * footer
 
 import { Container } from '../Container/Container';
-import logoFooter from './logo-koff-footer.svg';
+import logoFooter from './img/logoFooter.svg';
 import s from './Footer.module.scss';
 
 export const Footer = () => {
@@ -10,22 +10,21 @@ export const Footer = () => {
   return (
   <footer className={s.footer}>
     <Container className={s.container}>
-      <a className={s.logo_link} href="/">
-        <img className={s.logo} src={logoFooter} alt="big logo footer" />
+      <a className={s.logo_link} href="/" title='Koff - мебельный магазин'>
+        <img className={s.logo} src={logoFooter} alt="Koff - мебельный магазин" />
       </a>
 
       <div className={s.contacts}>
-        <a className={s.contactsPhone} href="tel:+7(939)8391297">
+        <a className={s.contacts_phone} href="tel:+7(939)8391297" title='Позвонить нам +7(939)839-12-97'>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.48572 1.54445L5.59257 1.21074C5.95787 1.10078 6.3507 1.12746 6.69778 1.2858C7.04486 1.44415 7.32248 1.72334 7.47886 2.07131L8.25486 3.79703C8.38954 4.09641 8.42708 4.43046 8.36221 4.75227C8.29734 5.07408 8.1333 5.36749 7.89315 5.59131L6.712 6.69188C6.55372 6.84217 6.67372 7.42788 7.252 8.43017C7.83086 9.43303 8.27829 9.8296 8.48457 9.76788L10.032 9.29474C10.3457 9.1988 10.6815 9.20341 10.9924 9.30794C11.3033 9.41246 11.5737 9.61166 11.7657 9.8776L12.8686 11.4062C13.0913 11.7148 13.1945 12.0939 13.1588 12.4728C13.1232 12.8518 12.9512 13.205 12.6749 13.4667L11.8223 14.2742C11.5471 14.5348 11.2076 14.7178 10.8386 14.8044C10.4696 14.891 10.0842 14.8782 9.72172 14.7673C7.93543 14.2205 6.28115 12.5976 4.73657 9.9216C3.18857 7.2416 2.604 4.98103 3.01143 3.13417C3.09361 2.76203 3.27354 2.41853 3.53269 2.1391C3.79183 1.85966 4.12081 1.65439 4.48572 1.54445Z"
               fill="currentColor" />
           </svg>
           <span className={s.contacts__tel}>+7&nbsp;(939)&nbsp;839&nbsp;12&nbsp;97</span>
         </a>
-
         <ul className={s.contacts__list}>
           <li className={s.contacts__item}>
-            <a href="#" className="contacts__link">
+            <a href="#" className="contacts__link contacts__link_vk" title='Сообщество Koff ВКонтакте'>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <g clipPath="url(#clip0_48_2369)">
                   <path
@@ -42,7 +41,7 @@ export const Footer = () => {
             </a>
           </li>
           <li className={s.contacts__item}>
-            <a href="#" className="contacts__link">
+            <a href="#" className="contacts__link contacts__link_youtube" title='Канал Koff на Youtube'>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <path
                   d="M6.66668 9.99992L10.1267 7.99992L6.66668 5.99992V9.99992ZM14.3733 4.77992C14.46 5.09325 14.52 5.51325 14.56 6.04658C14.6067 6.57992 14.6267 7.03992 14.6267 7.43992L14.6667 7.99992C14.6667 9.45992 14.56 10.5333 14.3733 11.2199C14.2067 11.8199 13.82 12.2066 13.22 12.3733C12.9067 12.4599 12.3333 12.5199 11.4533 12.5599C10.5867 12.6066 9.79334 12.6266 9.06001 12.6266L8.00001 12.6666C5.20668 12.6666 3.46668 12.5599 2.78001 12.3733C2.18001 12.2066 1.79334 11.8199 1.62668 11.2199C1.54001 10.9066 1.48001 10.4866 1.44001 9.95325C1.39334 9.41992 1.37334 8.95992 1.37334 8.55992L1.33334 7.99992C1.33334 6.53992 1.44001 5.46659 1.62668 4.77992C1.79334 4.17992 2.18001 3.79325 2.78001 3.62659C3.09334 3.53992 3.66668 3.47992 4.54668 3.43992C5.41334 3.39325 6.20668 3.37325 6.94001 3.37325L8.00001 3.33325C10.7933 3.33325 12.5333 3.43992 13.22 3.62659C13.82 3.79325 14.2067 4.17992 14.3733 4.77992Z"
@@ -52,7 +51,7 @@ export const Footer = () => {
             </a>
           </li>
           <li className={s.contacts__item}>
-            <a href="#" className="contacts__link">
+            <a href="#" className="contacts__link contacts__link_telega" title='Канал Koff в Телеграмм'>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <g clipPath="url(#clip0_48_2373)">
                   <path
@@ -69,9 +68,7 @@ export const Footer = () => {
             </a>
           </li>
         </ul>
-
       </div>
-
 
       <ul className={s.developer_list}>
         <li className={s.developer_item}>Designer: <a className="footer__developer-link" target="_blank" rel="noreferrer" href="https://t.me/Mrshmallowww" title='@Mrshmallowww'>
@@ -85,7 +82,6 @@ export const Footer = () => {
       </ul>
 
       <p className={s.copyright}>&copy;&nbsp;Koff,&nbsp;{`2023-${currentYear}`}</p>
-
     </Container>
   </footer>
-)};
+)}
