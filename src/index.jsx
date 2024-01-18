@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import 'normalize.css';
-import './index.css';
+import './index.scss';
 
 const rootSelector = '#root';
 const rootElement = document.querySelector(rootSelector);
