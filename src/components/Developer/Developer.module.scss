@@ -1,0 +1,10 @@
+.developer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (width > 580px) {
+    justify-self: start;
+    grid-area: development;
+  }
+}
