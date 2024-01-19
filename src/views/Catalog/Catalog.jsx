@@ -1,23 +1,26 @@
-// * Catalogue
+// * Catalog - Menu list of categories
+import { Container } from "../Container/Container";
+import s from './Catalog.module.scss';
 
-export const Catalogue = () => {
-  
+
+export const Catalog = () => {
+
+  const goodsList = ['Диваны', 'Шкафы', 'Стулья', 'Тумбы', 'Кровати', 'Столы', 'Комоды', 'Матрасы', 'Пуфики', 'Стеллажи'];
+  console.log('DEBUG goodsList: ', goodsList);
+
   return (
-    <Container>
-    <h1 className="visuall-hidden">Список веб товаров</h1>
-    
-    <div className="catalogue">
-      <ul className="catalogue__list">
-        <li className="catalogue__item">
-          <a href="#" className="catalogue__link">Тумбы</a>
-        </li>
-        <li className="catalogue__item">
-          <a href="#" className="catalogue__link">Столы</a>
-        </li>
-      </ul>
-    </div>
-    
-    <p className='visuall-hidden'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ex expedita officiis et, esse quidem, consectetur, quas aut soluta commodi sed! Molestias quam, corporis impedit magni dolorem consequuntur explicabo quae.</p>
-  </Container>
+    <Container className={s.container}>
+      <h1 className="visuall-hidden">Список веб товаров</h1>
+
+      <div className={s.catalog}>
+        <ul className={s.list}>
+          { goodsList.map((good, index) => (
+              <li className={s.item} key={index}> {/* // todo */}
+                <a href="#" className={s.link} title={'Товар ' + good}>{good}</a>
+              </li>
+            )) }
+        </ul>
+      </div>
+    </Container>
   )
 }
