@@ -5,124 +5,70 @@
   background-color: $dark;
   color: $light;
   padding: 32px 0 40px;
-  font-family: 'Open Sans', sans-serif;
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.2;
-  /* 14.4px */
-  /* for footer stick to bottom */
-  flex-shrink: 0;
+  // font-family: 'Open Sans', sans-serif;
+  // font-style: normal;
+  // font-weight: 400;
+  // line-height: 1.2;
+  flex-shrink: 0; // for footer to bottom
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  &_footer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 
-  @media (width > 580px) {
-    display: grid;
-    // grid-template-columns: repeat(2, 1fr); // 1fr 1fr 
-    grid-template-areas:
-      "logo contacts"
-      "development ."
-      "copyright .";
-  }
+    @media (width > 580px) {
+      display: grid;
+      grid-template-areas:
+        "logo contacts"
+        "development ."
+        "copyright .";
+    }
 
-  @media (width > 820px) {
-    gap: 32px;
+    @media (width > 820px) {
+      gap: 32px;
+    }
   }
 }
-
 
 .logo {
   display: block;
   width: 230px;
 
+  @media (width > 580px) {
+    grid-area: logo;
+  }
+
   @media (width > 820px) {
     width: 331px;
   }
-
-  &_link {
-    display: block;
-
-    @media (width > 580px) {
-      // grid-column: 1/2;
-      grid-area: logo;
-    }
-
-  }
 }
 
-
 .contacts {
-  // border: 1px solid lawngreen;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  color: #f1e9e4;
-
   @media (width > 580px) {
     justify-self: end;
-    // grid-column: 2/3;
     grid-area: contacts;
   }
 
-  &_phone {
-    display: flex;
-    gap: 4px;
-    color: #f1e9e4;
-
-    &:hover {
-      color: $gray;
-    }
-  }
-
-  // &__tel {
-  // }
-
-  &__list {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  &__item {
-    display: flex;
-    color: $white;
-
-    &:hover {
-      color: $gray;
-    }
-  }
-
-  &__link {
-    display: flex;
-  }
 }
-
 
 .developer {
   &_list {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-
 
     @media (width > 580px) {
-      // grid-column: 1/2;
       justify-self: start;
       grid-area: development;
     }
   }
 }
 
-
 .copyright {
   display: block;
 
   @media (width > 580px) {
-    // grid-column: 1/2;
     justify-self: start;
     grid-area: copyright;
   }
