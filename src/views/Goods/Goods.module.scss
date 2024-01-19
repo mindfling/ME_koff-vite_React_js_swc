@@ -1,5 +1,6 @@
 .goods {
   padding-top: 24px;
+  padding-bottom: 100px;
 
   @media (min-width: 580px) {
     padding-top: 32px;
@@ -9,6 +10,7 @@
     padding-top: 40px;
   }
 }
+
 .title {
   font-size: 24px;
   font-weight: 700;
@@ -47,5 +49,11 @@
 }
 
 .item {
-  border: 1px solid lawngreen;
+  // border: 1px solid lawngreen;
+  transition: transform 300ms ease;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }

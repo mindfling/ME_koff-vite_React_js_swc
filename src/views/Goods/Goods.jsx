@@ -31,6 +31,22 @@ export const Goods = () => {
             <CardItem />
           </li>
 
+          <li className={s.item}>
+            <CardItem />
+          </li>
+
+          <li className={s.item}>
+            <CardItem />
+          </li>
+
+          <li className={s.item}>
+            <CardItem />
+          </li>
+
+          <li className={s.item}>
+            <CardItem />
+          </li>
+
         </ul>
       </Container>
     </div>
