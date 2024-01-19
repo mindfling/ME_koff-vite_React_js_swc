@@ -1,9 +1,14 @@
 // * main
 import s from './Main.module.scss';
 
-export const Main = ({ children }) => (
+export const Main = () => (
   <main className={s.main}>
-    {children}
+    <Container>
+      {/* Catalogue */}
+    </Container>
+    <Container>
+      {/* Goods */}
+    </Container>
   </main>
 )
 
