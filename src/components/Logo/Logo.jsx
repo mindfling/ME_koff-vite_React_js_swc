@@ -1,4 +1,5 @@
-import logosvg from './logo-koff.svg';
+// import logosvg from './img/logo-header.svg'; // * component
+import logosvg from '/img/logo-header.svg'; // * public
 import s from './Logo.module.scss';
 
 export const Logo = (props) => (

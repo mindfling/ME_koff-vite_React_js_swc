@@ -1,6 +1,7 @@
+@import '../../styles/variables';
+
 .logo {
   display: block;
-  // border: 1px solid blue;
   border-radius: 4px;
   outline-offset: 2px;
   outline: 2px solid transparent;
@@ -8,14 +9,11 @@
   &:hover,
   &:active,
   &:focus {
-    color: #780096;
+    color: $violet;
   }
 
-  &:hover {
-    outline: 1px solid #DFE3EB;
-  }
 
-  &:focus {
+  &:focus-visible {
     outline-color: #969EAE;
   }
 }
