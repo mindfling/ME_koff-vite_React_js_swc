@@ -1,8 +1,9 @@
+@import '../../styles/variables';
+
 .navigation {
   display: flex;
   gap: 16px;
-  color: var(--dark-text, #1c1c1c);
-  // border: 1px solid violet;
+  color: var(--dark-text, $dark-text);
 }
 
 
@@ -11,35 +12,37 @@
   align-items: center;
   gap: 4px;
   flex-direction: row-reverse;
-  outline: none;
+  border-radius: 4px;
+  outline-offset: 2px;
+  outline: 2px solid transparent;
 
   svg {
-    // fill: #fff;
     fill: transparent;
   }
 
   &:hover,
   &:active {
-    color: #780096;
+    color: $violet;
 
     svg {
-      fill: #780096;
+      fill: $violet;
     }
   }
 
   &:focus-visible {
-    color: #780096;
+    color: $violet;
+    outline-color: #969EAE;
   }
 
   @media (min-width: 580px) {
     flex-direction: row;
   }
-}
 
 
-.linkText {
+  &_text {
   display: block;
   // display: none;
+  // для доступности текста
   position: fixed;
   transform: scale(0);
   color: inherit;
@@ -49,4 +52,4 @@
     position: unset;
     transform: scale(1);
   }
-}
+}}
