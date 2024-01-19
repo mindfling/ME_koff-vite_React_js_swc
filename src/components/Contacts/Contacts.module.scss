@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (width > 580px) {
+    justify-self: end;
+    grid-area: contacts;
+  }
+
+  &_phone {
+    display: flex;
+    gap: 4px;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &__item {
+    display: flex;
+    color: $white;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  &__link {
+    display: flex;
+  }
+}
