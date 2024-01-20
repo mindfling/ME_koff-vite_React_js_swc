@@ -7,15 +7,11 @@ import { Provider } from 'react-redux';
 import { store } from './store/store.js';
 
 
-const rootSelector = '#root';
-const rootElement = document.querySelector(rootSelector);
-rootElement.classList.add('root');
-const root = ReactDOM.createRoot(rootElement);
-
-root.render(
-  <>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </>,
-);
+ReactDOM.createRoot(document.querySelector('#root'))
+  .render(
+    <>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </>,
+  )
