@@ -1,20 +1,26 @@
 // * Goods
 import s from './CardItem.module.scss';
 
-export const CardItem = () => {
+const testProduct = {
+  img: '/img/photo.jpg',
+  title: 'Кресло Подлокотниками',
+  price: 5000,
+}
 
-  const imgHref = '/img/photo.jpg';
-  const title = 'Кресло Подлокотниками';
-  const price = 5000;
+export const CardItem = ({product}) => {
+  
+  if (!product) {
+    product = testProduct;
+  }
 
   return (
     <article className={s.card}>
       <a href="#" className={s.link}>
-        <img src={imgHref} alt={title} title={title} className={s.img} />
+        <img src={product.img} alt={product.title} title={product.title} className={s.img} />
       </a>
       <div className={s.info}>
-        <span className={s.title}>{title}</span>
-        <span className={s.price}>{price}&nbsp;&#8381;</span>
+        <span className={s.title}>{product.title}</span>
+        <span className={s.price}>{product.price}&nbsp;&#8381;</span>
       </div>
       <button className={s.btn}>В Корзину</button>
       <button className={s.favorite}>

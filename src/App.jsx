@@ -16,8 +16,6 @@ const App = () => {
       console.log('нет токена accessToken: ', accessToken);
       dispatch(fetchAccessToken())
     }
-    
-
   }, [dispatch, accessToken]);
 
 
@@ -25,7 +23,7 @@ const App = () => {
     <>
       <Header />
       {/* если загрузка закончилать и есть токен */}
-      { !loading && accessToken ? <Main /> : <p>Ожидание загрузки</p>}
+      { !loading && accessToken ? <Main /> : <p className='app_wait'>Ожидание загрузки</p>}
       <Footer />
     </>
   );
