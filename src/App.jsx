@@ -9,19 +9,26 @@ import { fetchAccessToken } from './store/auth/authSlice';
 const App = () => {
   const dispatch = useDispatch();
   const { accessToken, loading } = useSelector(state => state.auth);
+  console.log('loading: ', loading);
   
   useEffect(() => {
-    dispatch(fetchAccessToken())
-  }, [dispatch, accessToken]);
-  
-  
-return (
-  <>
-    <Header />
-    <Main />
-    <Footer />
-  </>
-)
-}
+    if (!accessToken) {
+      console.log('нет токена accessToken: ', accessToken);
+      dispatch(fetchAccessToken())
+    }
+    
 
-export default App;
+  }, [dispatch, accessToken]);
+
+
+  return (
+    <>
+      <Header />
+      {/* если загрузка закончилать и есть токен */}
+      { !loading && accessToken ? <Main /> : <p>Ожидание загрузки</p>}
+      <Footer />
+    </>
+  );
+};
+
+export default App; 

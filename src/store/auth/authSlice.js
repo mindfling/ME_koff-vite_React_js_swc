@@ -1,6 +1,6 @@
 // получаем токен ключ доступа из хранилища и из сервера
 // ** authorisation Slice
-import {createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 const STORAGE_KEY = 'accessToken';
 const API_KEY = 'https://koff-api.vercel.app/api/users/accessKey';
@@ -16,9 +16,10 @@ export const fetchAccessToken = createAsyncThunk(
     }
     
     const data = await response.json();
+    console.log('Получили от сервера data: ', data);
     return data.accessKey; // то что получили от сервера
-  }
-)
+  },
+);
 
 
 // слайс данных авторизации
@@ -45,6 +46,7 @@ const authSlice = createSlice({
       .addCase(fetchAccessToken.fulfilled, (state, action) => {
         // успешное завершение
         state.accessToken = action.payload;
+        localStorage.setItem(STORAGE_KEY, action.payload);
         state.loading = false;
         state.error = null;
       })
@@ -57,5 +59,5 @@ const authSlice = createSlice({
 })
 
 
-export const { removeToken } = authSlice.action;
+export const { removeToken } = authSlice.actions;
 export default authSlice.reducer;
