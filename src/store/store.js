@@ -1,4 +1,4 @@
-import { configureStore } from '@vitejs/plugin-react-swc';
+import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth/authSlice';
 
 
