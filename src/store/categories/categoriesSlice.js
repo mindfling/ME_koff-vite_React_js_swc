@@ -26,9 +26,6 @@ const initialState = {
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
-  reducers: {
-    
-  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCategories.pending, (state) => {
@@ -40,9 +37,12 @@ const categoriesSlice = createSlice({
         state.loading = false;
         state.error = null;
       })
-      .addCase(fetchCategories.error, (state, action) => {
+      .addCase(fetchCategories.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       })
   },
 });
+
+
+export default categoriesSlice.reducer;
