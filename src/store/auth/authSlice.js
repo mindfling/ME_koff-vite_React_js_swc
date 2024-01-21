@@ -10,6 +10,7 @@ export const fetchAccessToken = createAsyncThunk(
   'auth/fetchAccessToken',
   async () => {
     const response = await fetch(API_KEY);
+    console.log('raw response: ', response);
     
     if (!response.ok) {
       throw new Error('Не удалось получить ключ доступа');
@@ -32,6 +33,7 @@ const authSlice = createSlice({
   },
   reducers: {
     removeToken(state) {
+      console.log('token removed');
       state.accessToken = null;
       localStorage.removeItem(STORAGE_KEY);
     }
@@ -42,6 +44,7 @@ const authSlice = createSlice({
         // загрузка
         state.loading = true;
         state.error = null;
+        console.log('Загрузка токена');
       })
       .addCase(fetchAccessToken.fulfilled, (state, action) => {
         // успешное завершение
@@ -49,15 +52,18 @@ const authSlice = createSlice({
         localStorage.setItem(STORAGE_KEY, action.payload);
         state.loading = false;
         state.error = null;
+        console.log('Загрузка токена завершина успешно', action.payload);
       })
       .addCase(fetchAccessToken.rejected, (state, action) => {
         // завершилось ошибкой
         state.loading = false;
         state.error = action.error.message;
+        console.error('Загрузка с ошибкой :', state.error);
       })
   },
 })
 
 
-export const { removeToken } = authSlice.actions;
+// export const {removeToken} = authSlice.actions;
+export const removeToken = authSlice.actions.removeToken;
 export default authSlice.reducer;
