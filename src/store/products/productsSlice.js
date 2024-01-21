@@ -5,7 +5,7 @@ const API_PRODUCTS = `${API_URL}/api/products`;
 
 
 export const fetchProducts = createAsyncThunk(
-  'categories/fetchProducts',
+  'products/fetchProducts',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const token = state.auth.accessToken;
@@ -20,8 +20,7 @@ export const fetchProducts = createAsyncThunk(
       throw new Error('Не удалось получить СПИСОК ТОВАРОВ');
     }
     
-    const data = await response.json();
-    return data;
+    return await response.json();
   }
 )
 

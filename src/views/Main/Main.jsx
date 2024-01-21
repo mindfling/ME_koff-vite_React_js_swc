@@ -15,6 +15,12 @@ export const Main = () => {
     loading: loadingCategories,
     error: errorCategories,
   } = useSelector((state) => state.categories); // todo
+
+  const {
+    data: dataProducts,
+    loading: loadingProducts,
+    error: errorProducts,
+  } = useSelector( state => state.products ); // todo
   
   useEffect(() => {
     dispatch(fetchCategories());
@@ -25,13 +31,16 @@ export const Main = () => {
     return <div className="good__info">Загрузка товаров...</div>
   }
   if (errorCategories) {
-    return <div className="good__error">Ошибка загрузки товаров {errorCategories} :(</div>
+    return <div className="good__error">Ошибка загрузки категорий {errorCategories} :(</div>
+  }
+  if (errorProducts) {
+    return <div className="good__error">Ошибка загрузки товаров {errorProducts} :(</div>
   }
 
   return (
     <main className={s.main}>
       <Catalog data={dataCategories}/>
-      <Goods />
+      <Goods data={dataProducts} />
     </main>
   );
 }
