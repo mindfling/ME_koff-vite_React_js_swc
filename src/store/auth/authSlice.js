@@ -3,7 +3,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 const STORAGE_KEY = 'accessToken';
-const API_KEY = 'https://koff-api.vercel.app/api/users/accessKey';
+const API_URL = 'https://koff-api.vercel.app';
+const API_KEY = `${API_URL}/api/users/accessKey`;
+
 
 // получаем ключ для авторизации от сервера
 export const fetchAccessToken = createAsyncThunk(
