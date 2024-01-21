@@ -3,22 +3,21 @@ import { Container } from "../Container/Container";
 import s from './Catalog.module.scss';
 
 
-export const Catalog = ({data}) => {
-  console.log('Список товаров в каталог data: ', data);
+export const Catalog = ({ data }) => {
 
   return (
-    <Container className={s.container}>
-      <div className={s.catalog}>
+    <nav className={s.catalog}>
+      <Container className={s.container}>
         <ul className={s.list}>
-          { data.map((cat, i) => (
-              <li className={s.item} key={i}>
-                <a href={`/?cat=${cat}`} className={s.link} title={'Товар ' + cat}>
-                  {i + 1 + ' ' + cat}
-                </a>
-              </li>
-            )) }
+          {data.map((cat, i) => (
+            <li className={s.item} key={i}>
+              <a href={`category/?cat=${cat}`} className={s.link} title={'Товары ' + cat}>
+                {cat}
+              </a>
+            </li>
+          ))}
         </ul>
-      </div>
-    </Container>
+      </Container>
+    </nav>
   )
 }
