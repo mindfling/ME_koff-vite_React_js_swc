@@ -10,12 +10,14 @@ import { fetchProducts } from '../../store/products/productsSlice';
 export const Main = () => {
   const dispatch = useDispatch();
   
+  // todo перенести в Catalog
   const {
     data: dataCategories,
     loading: loadingCategories,
     error: errorCategories,
-  } = useSelector((state) => state.categories); // todo
-
+  } = useSelector((state) => state.categories ); // todo
+  
+  // todo перенести в Goods
   const {
     data: dataProducts,
     loading: loadingProducts,
@@ -37,6 +39,8 @@ export const Main = () => {
     return <div className="good__error">Ошибка загрузки товаров {errorProducts} :(</div>
   }
 
+  
+  // todo избавиться от передаваемых параметров
   return (
     <main className={s.main}>
       <Catalog data={dataCategories}/>
