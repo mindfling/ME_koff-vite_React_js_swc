@@ -1,7 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { API_PRODUCTS } from "../../const";
-// const API_URL = 'https://koff-api.vercel.app';
-// const API_PRODUCTS = `${API_URL}/api/products`;
 
 
 export const fetchProducts = createAsyncThunk(
@@ -16,7 +14,6 @@ export const fetchProducts = createAsyncThunk(
     })
     
     if (!response.ok) {
-      console.error('Ошибка загрузки ТОВАРОВ', response.status, response.statusText);
       throw new Error('Не удалось получить СПИСОК ТОВАРОВ');
     }
     
@@ -41,7 +38,6 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.data = action.payload;
-        console.log('action.payload PRODUCTS fulfilled: ', action.payload);
         state.loading = false;
         state.error = null;
       })
