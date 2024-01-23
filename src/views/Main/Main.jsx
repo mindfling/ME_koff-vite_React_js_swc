@@ -29,8 +29,9 @@ export const Main = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  if (loadingCategories) {
-    return <div className="good__info">Загрузка товаров...</div>
+
+  if (loadingCategories || loadingProducts) {
+    return <div className="good__info">Загрузка товаров и категорий...</div>
   }
   if (errorCategories) {
     return <div className="good__error">Ошибка загрузки категорий {errorCategories} :(</div>
@@ -39,7 +40,6 @@ export const Main = () => {
     return <div className="good__error">Ошибка загрузки товаров {errorProducts} :(</div>
   }
 
-  
   // todo избавиться от передаваемых параметров
   return (
     <main className={s.main}>

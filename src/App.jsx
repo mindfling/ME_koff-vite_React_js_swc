@@ -9,11 +9,9 @@ import { fetchAccessToken } from './store/auth/authSlice';
 const App = () => {
   const dispatch = useDispatch();
   const { accessToken, loading } = useSelector(state => state.auth);
-  console.log('loading: ', loading);
   
   useEffect(() => {
     if (!accessToken) {
-      console.log('нет токена accessToken: ', accessToken);
       dispatch(fetchAccessToken())
     }
   }, [dispatch, accessToken]);
@@ -28,5 +26,6 @@ const App = () => {
     </>
   );
 };
+
 
 export default App; 
