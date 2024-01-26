@@ -7,8 +7,10 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Catalog } from './views/Catalog/Catalog';
 import { Goods } from './views/Goods/Goods';
 import { Cart } from './views/Cart/Cart';
+import { Container } from './views/Container/Container';
 
 
+/* выводим разное содержимое в зависимости от адреса роута */
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,7 +31,10 @@ const router = createBrowserRouter([
       <>
         <Header />
         <main>
-          <Catalog />
+          <Container>
+            <p>Загрузка страницы избранное</p>
+          </Container>
+          {/* <Catalog /> */}
           <Goods />
         </main>
         <Footer />
@@ -43,7 +48,6 @@ const router = createBrowserRouter([
         <Header />
         <main>
           <Catalog />
-          <Goods />
         </main>
         <Footer />
       </>
@@ -55,8 +59,9 @@ const router = createBrowserRouter([
       <>
         <Header />
         <main>
-          <Catalog />
-          <Goods />
+          <Container>
+            <p>Поиск товаров</p>
+          </Container>
         </main>
         <Footer />
       </>
@@ -68,8 +73,8 @@ const router = createBrowserRouter([
       <>
         <Header />
         <main>
-          <Catalog />
-          {/* <Cart /> */}
+          {/* <Catalog /> */}
+          <Cart />
         </main>
         <Footer />
       </>
@@ -81,8 +86,11 @@ const router = createBrowserRouter([
       <>
         <Header />
         <main>
-          <Catalog />
-          <Cart />
+          {/* <Catalog /> */}
+          <Container>
+            <p>Товар артику ...</p>
+          </Container>
+          {/* <Cart /> */}
         </main>
         <Footer />
       </>
@@ -105,7 +113,7 @@ const App = () => {
   if (loading) {
     return (
       <>
-        <div>Загрузка</div>
+        <div>Загрузка . . .</div>
       </>
     )
   }
