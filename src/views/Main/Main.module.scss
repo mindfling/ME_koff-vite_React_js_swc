@@ -1,9 +1,0 @@
-@import '../../styles/variables';
-
-.main {
-  flex-grow: 1; /* for footer */
-  display: flex;
-  flex-direction: column;
-  background-color: $white;
-  color: $dark;
-}

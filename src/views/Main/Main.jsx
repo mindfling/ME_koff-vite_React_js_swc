@@ -1,7 +1,4 @@
 // * main
-import s from './Main.module.scss';
-import { Catalog } from '../Catalog/Catalog';
-import { Goods } from '../Goods/Goods';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories } from '../../store/categories/categoriesSlice';
@@ -42,9 +39,6 @@ export const Main = () => {
 
   // todo избавиться от передаваемых параметров
   return (
-    <main className={s.main}>
-      <Catalog data={dataCategories}/>
-      <Goods data={dataProducts} />
-    </main>
+<></>
   );
 }
