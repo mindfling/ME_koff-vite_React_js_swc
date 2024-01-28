@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         <main>
           <Catalog />
           <Container>
-            <p>Загрузка страницы избранное</p>
+            <p>Страница избранное Favorite</p>
           </Container>
           <Goods />
         </main>
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
         <main>
           <Catalog />
           <Container>
-            <p>Поиск товаров</p>
+            <p>Поиск товаров Search</p>
           </Container>
         </main>
         <Footer />
@@ -79,7 +79,6 @@ const router = createBrowserRouter([
       <>
         <Header />
         <main>
-          {/* <Catalog /> */}
           <Cart />
         </main>
         <Footer />
@@ -100,43 +99,40 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '*',
+    path: '*', // path for 404 NotFoundPage
     element: (
       <>
-      <Header></Header>
-      <main>
-        <NotFoundPage />
-      </main>
-      <Footer></Footer>
+        <Header />
+        <main>
+          <NotFoundPage />
+        </main>
+        <Footer />
       </>
-    )
+    ),
   },
-])
-
+]);
 
 const App = () => {
   const dispatch = useDispatch();
-  const { accessToken, loading } = useSelector(state => state.auth);
+  const { accessToken, loading } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if (!accessToken) {
-      dispatch(fetchAccessToken())
+      dispatch(fetchAccessToken());
     }
   }, [dispatch, accessToken]);
-
 
   if (loading) {
     return (
       <>
-        <div>Загрузка . . .</div>
+        <Container>
+          <div>Загрузка...</div>
+        </Container>
       </>
-    )
+    );
   }
 
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 };
 
-
-export default App; 
+export default App;
