@@ -2,30 +2,20 @@
 import { API_URL } from '../../const';
 import s from './CardItem.module.scss';
 
-// тестовый товар
-const testProduct = {
-  name: 'Кресло Подлокотниками',
-  image: '/img/photo.jpg',
-  price: 5000,
-  id: '16955475754',
-};
 
 export const CardItem = ({ name, images: [image], price, id }) => {
   const handleFavories = () => {
-    alert(`add product ${name} to favorites`);
     console.log(`add product ${name} to favorites`);
   }
   
   return (
     <article className={s.card} title={`Товар ${name}`}>
       <a href={`/product/${id}`} className={s.link}>
-        <img src={`${API_URL}/${image}`} alt={name} className={s.img} />
+        <img className={s.img} src={`${API_URL}/${image}`} alt={name} />
       </a>
       <div className={s.info}>
         <h3 className={s.title}>
-          <a className="link" href={`/product/${id}`}>
-            {name}
-          </a>
+          <a className={s.link} href={`/product/${id}`}>{name}</a>
         </h3>
         <p className={s.price} title={`Цена товара ${price} р`}>
           {price.toLocaleString()}&nbsp;&#8381;
@@ -43,5 +33,5 @@ export const CardItem = ({ name, images: [image], price, id }) => {
         </svg>
       </button>
     </article>
-  );
-};
+  )
+}
