@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container } from '../Container/Container';
 import { useEffect } from 'react';
 import { fetchCategories } from '../../store/categories/categoriesSlice';
+import { Link } from 'react-router-dom';
 
 export const Catalog = () => {
   const dispatch = useDispatch();
@@ -42,12 +43,12 @@ export const Catalog = () => {
         <ul className={s.list}>
           {data.map((cat, i) => (
             <li className={s.item} key={i}>
-              <a
-                href={`/category/?cat=${cat}`}
+              <Link
+                to={`/category/?cat=${cat}`}
                 className={s.link}
-                title={'Товары из категории ' + cat}>
+                title={`Товары из категории ${cat}`}>
                 {cat}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
