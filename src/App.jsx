@@ -6,8 +6,10 @@ import { fetchAccessToken } from './store/auth/authSlice';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Catalog } from './views/Catalog/Catalog';
 import { Goods } from './views/Goods/Goods';
+import { Card } from './views/Card/Card';
 import { Cart } from './views/Cart/Cart';
 import { Container } from './views/Container/Container';
+import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 
 
 /* выводим разное содержимое в зависимости от адреса роута */
@@ -31,10 +33,10 @@ const router = createBrowserRouter([
       <>
         <Header />
         <main>
+          <Catalog />
           <Container>
             <p>Загрузка страницы избранное</p>
           </Container>
-          {/* <Catalog /> */}
           <Goods />
         </main>
         <Footer />
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
         <Header />
         <main>
           <Catalog />
+          <Container>
+            <p>Список товаров по категориям</p>
+          </Container>
+          <Goods />
         </main>
         <Footer />
       </>
@@ -59,6 +65,7 @@ const router = createBrowserRouter([
       <>
         <Header />
         <main>
+          <Catalog />
           <Container>
             <p>Поиск товаров</p>
           </Container>
@@ -86,15 +93,24 @@ const router = createBrowserRouter([
       <>
         <Header />
         <main>
-          {/* <Catalog /> */}
-          <Container>
-            <p>Товар артику ...</p>
-          </Container>
-          {/* <Cart /> */}
+          <Catalog />
+          <Card />
         </main>
         <Footer />
       </>
     ),
+  },
+  {
+    path: '*',
+    element: (
+      <>
+      <Header></Header>
+      <main>
+        <NotFoundPage />
+      </main>
+      <Footer></Footer>
+      </>
+    )
   },
 ])
 
