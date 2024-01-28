@@ -174,7 +174,7 @@ module.exports = {
     "quote-props": ["error", "consistent"],
     "quotes": [
       "error",
-      "double",
+      "single",
       {
         "allowTemplateLiterals": true
       }
