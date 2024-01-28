@@ -7,9 +7,9 @@ import { useEffect } from 'react';
 import { fetchProducts } from '../../store/products/productsSlice';
 
 
-
+/* wise component более назависим и
+    загружает данные внутри себя */
 export const Goods = () => {
-
   const dispatch = useDispatch();
 
   const {
@@ -20,9 +20,9 @@ export const Goods = () => {
 
   useEffect(() => {
     dispatch(fetchProducts());
-    console.log('data products reloaded');
   }, [dispatch]);
 
+  /* Пока идет загрузка */
   if (loading) {
     return (
       <>
@@ -37,6 +37,7 @@ export const Goods = () => {
     );
   }
 
+  /* Когда выпала ошибка */
   if (error) {
     return (
       <>
@@ -47,6 +48,7 @@ export const Goods = () => {
     );
   }
 
+  /* //todo когда всё нормально загрузилось */
   return (
     <section className={s.goods}>
       <Container>
