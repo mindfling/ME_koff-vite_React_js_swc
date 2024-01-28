@@ -11,7 +11,6 @@ import { Cart } from './views/Cart/Cart';
 import { Container } from './views/Container/Container';
 import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 
-
 /* выводим разное содержимое в зависимости от адреса роута */
 const router = createBrowserRouter([
   {

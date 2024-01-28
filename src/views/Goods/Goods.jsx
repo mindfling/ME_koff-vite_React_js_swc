@@ -6,17 +6,12 @@ import s from './Goods.module.scss';
 import { useEffect } from 'react';
 import { fetchProducts } from '../../store/products/productsSlice';
 
-
-/* wise component более назависим и
+/* wise component более назависим, находятся во view и
     загружает данные внутри себя */
 export const Goods = () => {
   const dispatch = useDispatch();
 
-  const {
-    data,
-    loading,
-    error,
-  } = useSelector(state => state.products);
+  const { data, loading, error } = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -52,7 +47,7 @@ export const Goods = () => {
   return (
     <section className={s.goods}>
       <Container>
-        <h2 className={s.title + ' visuallyy-hidden'}>Список товаров</h2>
+        <h2 className={s.title + ' visuallyy-hidden'}>Список товаров Goods</h2>
 
         <ul className={s.list}>
           {data.map((item) => (

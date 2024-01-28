@@ -1,5 +1,4 @@
 // * Container с дочерними элементами
-// import './style.scss';
 import s from './Container.module.scss';
 
 export const Container = ({ className, children }) =>

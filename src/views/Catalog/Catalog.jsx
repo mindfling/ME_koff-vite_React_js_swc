@@ -12,7 +12,6 @@ export const Catalog = () => {
 
   useEffect(() => {
     dispatch(fetchCategories());
-    console.log('data products reloaded');
   }, [dispatch]);
 
   if (loading) {
@@ -31,7 +30,7 @@ export const Catalog = () => {
     return (
       <>
         <Container>
-          <p>Ошибка загрузки каталога товаров</p>
+          <p>Ошибка загрузки каталога товаров {error}</p>
         </Container>
       </>
     );
