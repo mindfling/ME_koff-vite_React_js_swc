@@ -7,12 +7,15 @@ import s from './Card.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { fetchProduct } from '../../store/product/productSlice';
+import { useParams } from 'react-router-dom';
 
 // todo карточка товара
 // todo one product slice
 export const Card = () => {
   const [mainSwiper, setMainSwiper] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const { productID } = useParams();
+  console.log('Параметр продукта productID: ', productID);
 
   // const dispatch = useDispatch();
 
@@ -39,33 +42,45 @@ export const Card = () => {
                 thumbs={{ swiper: thumbsSwiper }}
                 onSwiper={setMainSwiper}>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="кресло 0" title="кресло 0" />
+                  <img
+                    src="http://placehold.jp/6e11bb/ffffff/550x440.png?text=Chair-one"
+                    alt="кресло 0" title="кресло 0" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="кресло 2" title="кресло 2" />
+                  <img
+                    src="http://placehold.jp/303de8/ffffff/550x440.png?text=Chair-two"
+                    alt="кресло 2" title="кресло 2" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="кресло 3" title="кресло 3" />
+                  <img src="http://placehold.jp/6e71bb/ffffff/550x440.png?text=Chair-three"
+                    alt="кресло 3" title="кресло 3" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="кресло 0" title="кресло 0" />
+                  <img src="http://placehold.jp/2e712b/ffffff/550x440.png?text=Chair-Four"
+                    alt="кресло 0" title="кресло 0" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="кресло 2" title="кресло 2" />
+                  <img src="http://placehold.jp/303de8/ffffff/550x440.png?text=Chair-Five"
+                    alt="кресло 2" title="кресло 2" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="кресло 3" title="кресло 3" />
+                  <img src="http://placehold.jp/6e71bb/ffffff/550x440.png?text=Chair-Six"
+                    alt="кресло 3" title="кресло 3" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src="http://placehold.jp/9e215b/ffffff/550x440.png?text=Chair-Seven"
+                    alt="кресло 3" title="кресло 3" />
                 </SwiperSlide>
               </Swiper>
-              <button
-                onClick={() => mainSwiper.slideNext()}
-                className={s.btn_next}>
-                next -
-              </button>
               <button
                 onClick={() => mainSwiper.slidePrev()}
                 className={s.btn_prev}>
                 - prev
+              </button>
+              <button
+                onClick={() => mainSwiper.slideNext()}
+                className={s.btn_next}>
+                next -
               </button>
             </div>
 
@@ -77,22 +92,25 @@ export const Card = () => {
                 slidesPerView={4}
                 freeMode={true}>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="малое кресло" />
+                  <img src="http://placehold.jp/6e11bb/ffffff/210x210.png?text=Chair-one" alt="малое кресло" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="малое кресло" />
+                  <img src="http://placehold.jp/303de8/ffffff/210x210.png?text=Chair-two" alt="малое кресло" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="малое кресло" />
+                  <img src="http://placehold.jp/6e71bb/ffffff/210x210.png?text=Chair-three" alt="малое кресло" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="малое кресло" />
+                  <img src="http://placehold.jp/2e712b/ffffff/210x210.png?text=Chair-Four" alt="малое кресло" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="малое кресло" />
+                  <img src="http://placehold.jp/303de8/ffffff/210x210.png?text=Chair-Five" alt="малое кресло" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="/img/photo.jpg" alt="малое кресло" />
+                  <img src="http://placehold.jp/6e71bb/ffffff/210x210.png?text=Chair-Six" alt="малое кресло" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src="http://placehold.jp/9e215b/ffffff/210x210.png?text=Chair-Seven" alt="малое кресло" />
                 </SwiperSlide>
               </Swiper>
             </div>
