@@ -1,6 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { API_PRODUCTS } from "../../const";
-
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { API_PRODUCTS } from '../../const';
 
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
@@ -9,23 +8,23 @@ export const fetchProducts = createAsyncThunk(
     const token = state.auth.accessToken;
     const response = await fetch(API_PRODUCTS, {
       headers: {
-        'Authorization': `Bearer ${token}`,
-      }
-    })
-    
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
     if (!response.ok) {
       throw new Error('Не удалось получить СПИСОК ТОВАРОВ');
     }
-    
+
     return await response.json();
-  }
-)
+  },
+);
 
 const initialState = {
   data: [],
   loading: false,
   error: null,
-}
+};
 
 const productsSlice = createSlice({
   name: 'products',
@@ -44,9 +43,8 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-      })
+      });
   },
 });
-
 
 export default productsSlice.reducer; // *productsReducer
