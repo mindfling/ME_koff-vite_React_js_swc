@@ -14,16 +14,38 @@ import { useParams } from 'react-router-dom';
 export const Card = () => {
   const [mainSwiper, setMainSwiper] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
   const { productID } = useParams();
   console.log('Параметр продукта productID: ', productID);
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const { data, loading, error } = useSelector((state) => state.product);
+  const { data, loading, error } = useSelector((state) => state.product);
 
-  // useEffect(() => {
-  //   dispatch(fetchProduct());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchProduct(productID));
+  }, [dispatch, productID]);
+
+/*
+  if (loading) {
+    return (
+      <>
+        <Container>
+          <p>Загрузка каталога товаров</p>
+        </Container>
+      </>
+    );
+  }
+*/
+  if (error) {
+    return (
+      <>
+        <Container>
+          <p>Ошибка загрузки каталога товаров {error}</p>
+        </Container>
+      </>
+    );
+  }
 
   // if success
   return (
@@ -34,7 +56,7 @@ export const Card = () => {
             Отдельная страница товара <b>Card</b>
           </p>
 
-          <h2 className={s.title}>Кресло с локотниками</h2>
+          <h2 className={s.title}>{data?.name}</h2>
           <div className={s.picture}>
             <div className={s.sliderMain}>
               <Swiper
@@ -44,32 +66,51 @@ export const Card = () => {
                 <SwiperSlide>
                   <img
                     src="http://placehold.jp/6e11bb/ffffff/550x440.png?text=Chair-one"
-                    alt="кресло 0" title="кресло 0" />
+                    alt="кресло 0"
+                    title="кресло 0"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
                     src="http://placehold.jp/303de8/ffffff/550x440.png?text=Chair-two"
-                    alt="кресло 2" title="кресло 2" />
+                    alt="кресло 2"
+                    title="кресло 2"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/6e71bb/ffffff/550x440.png?text=Chair-three"
-                    alt="кресло 3" title="кресло 3" />
+                  <img
+                    src="http://placehold.jp/6e71bb/ffffff/550x440.png?text=Chair-three"
+                    alt="кресло 3"
+                    title="кресло 3"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/2e712b/ffffff/550x440.png?text=Chair-Four"
-                    alt="кресло 0" title="кресло 0" />
+                  <img
+                    src="http://placehold.jp/2e712b/ffffff/550x440.png?text=Chair-Four"
+                    alt="кресло 0"
+                    title="кресло 0"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/303de8/ffffff/550x440.png?text=Chair-Five"
-                    alt="кресло 2" title="кресло 2" />
+                  <img
+                    src="http://placehold.jp/303de8/ffffff/550x440.png?text=Chair-Five"
+                    alt="кресло 2"
+                    title="кресло 2"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/6e71bb/ffffff/550x440.png?text=Chair-Six"
-                    alt="кресло 3" title="кресло 3" />
+                  <img
+                    src="http://placehold.jp/6e71bb/ffffff/550x440.png?text=Chair-Six"
+                    alt="кресло 3"
+                    title="кресло 3"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/9e215b/ffffff/550x440.png?text=Chair-Seven"
-                    alt="кресло 3" title="кресло 3" />
+                  <img
+                    src="http://placehold.jp/9e215b/ffffff/550x440.png?text=Chair-Seven"
+                    alt="кресло 3"
+                    title="кресло 3"
+                  />
                 </SwiperSlide>
               </Swiper>
               <button
@@ -92,25 +133,46 @@ export const Card = () => {
                 slidesPerView={4}
                 freeMode={true}>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/6e11bb/ffffff/210x210.png?text=Chair-one" alt="малое кресло" />
+                  <img
+                    src="http://placehold.jp/6e11bb/ffffff/210x210.png?text=Chair-one"
+                    alt="малое кресло"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/303de8/ffffff/210x210.png?text=Chair-two" alt="малое кресло" />
+                  <img
+                    src="http://placehold.jp/303de8/ffffff/210x210.png?text=Chair-two"
+                    alt="малое кресло"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/6e71bb/ffffff/210x210.png?text=Chair-three" alt="малое кресло" />
+                  <img
+                    src="http://placehold.jp/6e71bb/ffffff/210x210.png?text=Chair-three"
+                    alt="малое кресло"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/2e712b/ffffff/210x210.png?text=Chair-Four" alt="малое кресло" />
+                  <img
+                    src="http://placehold.jp/2e712b/ffffff/210x210.png?text=Chair-Four"
+                    alt="малое кресло"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/303de8/ffffff/210x210.png?text=Chair-Five" alt="малое кресло" />
+                  <img
+                    src="http://placehold.jp/303de8/ffffff/210x210.png?text=Chair-Five"
+                    alt="малое кресло"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/6e71bb/ffffff/210x210.png?text=Chair-Six" alt="малое кресло" />
+                  <img
+                    src="http://placehold.jp/6e71bb/ffffff/210x210.png?text=Chair-Six"
+                    alt="малое кресло"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="http://placehold.jp/9e215b/ffffff/210x210.png?text=Chair-Seven" alt="малое кресло" />
+                  <img
+                    src="http://placehold.jp/9e215b/ffffff/210x210.png?text=Chair-Seven"
+                    alt="малое кресло"
+                  />
                 </SwiperSlide>
               </Swiper>
             </div>
