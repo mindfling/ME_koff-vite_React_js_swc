@@ -11,6 +11,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchProduct } from '../../store/product/productSlice';
 
+import { API_URL } from '../../const';
+
 export const Card = () => {
   const [mainSwiper, setMainSwiper] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -49,6 +51,7 @@ export const Card = () => {
     );
   }
 
+  // ! проверяем пришел ли в data Объект!!
   if (Object.keys(data).length > 0) {
     return (
       <>
@@ -67,13 +70,13 @@ export const Card = () => {
                   thumbs={{ swiper: thumbsSwiper }}
                   onSwiper={setMainSwiper}>
                   <SwiperSlide>
-                    <img className={b.slide} src="/img/photo.jpg" alt="кресло 0" title="кресло 0" />
+                    <img className={b.slide} src={`${API_URL}/${data?.images[0]}`} alt="кресло 0" title="кресло 0" />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img className={b.slide} src="/img/photo.jpg" alt="кресло 2" title="кресло 2" />
+                    <img className={b.slide} src={`${API_URL}/${data?.images[1]}`} alt="кресло 2" title="кресло 2" />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img className={b.slide} src="/img/photo.jpg" alt="кресло 3" title="кресло 3" />
+                    <img className={b.slide} src={`${API_URL}/${data?.images[3]}`} alt="кресло 3" title="кресло 3" />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img className={b.slide} src="/img/photo.jpg" alt="кресло 0" title="кресло 0" />
@@ -86,7 +89,7 @@ export const Card = () => {
                   </SwiperSlide>
                 </Swiper>
                 <button
-                  className={b.arrow + ' ' + b.arrow_prev}
+                  className={b.arrow + ' ' + b.arrow_next}
                   onClick={() => mainSwiper.slidePrev()}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +111,7 @@ export const Card = () => {
                   </svg>
                 </button>
                 <button
-                  className={b.arrow + ' ' + b.arrow_next}
+                  className={b.arrow + ' ' + b.arrow_prev}
                   onClick={() => mainSwiper.slideNext()}>
                   <svg
                     width="32"
@@ -140,10 +143,10 @@ export const Card = () => {
                   slidesPerView={4}
                   freeMode={true}>
                   <SwiperSlide>
-                    <img className={b.slideThumbnail} src="/img/photo.jpg" alt="малое кресло" />
+                    <img className={b.slide} src={`${API_URL}/${data?.images[0]}`} alt="малое кресло" />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img className={b.slideThumbnail} src="/img/photo.jpg" alt="малое кресло" />
+                    <img className={b.slide} src={`${API_URL}/${data?.images[1]}`} alt="малое кресло" />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img className={b.slideThumbnail} src="/img/photo.jpg" alt="малое кресло" />
