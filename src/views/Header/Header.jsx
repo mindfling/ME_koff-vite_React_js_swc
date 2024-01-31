@@ -1,5 +1,5 @@
 // * header
-import { Container } from "../Container/Container";
+import { Container } from '../Container/Container';
 import { Logo } from '../../components/Logo/Logo';
 import { SearchForm } from '../../components/SearchForm/SearchForm';
 import { Navigation } from '../../components/Navigation/Navigation';
@@ -13,4 +13,4 @@ export const Header = () => (
       <Navigation className={style.navigation} />
     </Container>
   </header>
-)
+);

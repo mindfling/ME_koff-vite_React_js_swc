@@ -4,7 +4,8 @@ import s from './CardItem.module.scss';
 
 export const CardItem = ({ name, images: [image], price, id }) => {
   const handleFavories = () => {
-    console.log(`add product ${name} to favorites`);
+    console.log(`add product ${name} арт. ${id} to favorites`);
+    // addProductToFavorites(id)
   };
 
   return (
