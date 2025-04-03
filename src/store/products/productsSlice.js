@@ -13,6 +13,13 @@ export const fetchProducts = createAsyncThunk(
     });
 
     if (!response.ok) {
+      // if (response.status === 401) {
+      //   console.log('products Slice response status was 401');
+      //   return thunkAPI.rejectWithValue({
+      //     status: response.status, // will payload
+      //     error: 'Не удалось получить продукты products',
+      //   });
+      // }
       throw new Error('Не удалось получить СПИСОК ТОВАРОВ');
     }
 
